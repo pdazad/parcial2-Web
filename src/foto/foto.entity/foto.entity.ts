@@ -1,10 +1,9 @@
+/* eslint-disable prettier/prettier */
 import {
   Column,
   Entity,
   ManyToOne,
-  OneToOne,
   PrimaryGeneratedColumn,
-  JoinColumn,
 } from 'typeorm';
 import { UsuarioEntity } from '../../usuario/usuario.entity/usuario.entity';
 import { AlbumEntity } from '../../album/album.entity/album.entity';
@@ -22,8 +21,7 @@ export class FotoEntity {
   @Column()
   fecha: Date;
 
-  @OneToOne(() => AlbumEntity, (album) => album.foto)
-  @JoinColumn()
+  @ManyToOne(() => AlbumEntity, (album) => album.fotos)
   album: AlbumEntity;
   @ManyToOne(() => UsuarioEntity, (usuario) => usuario.fotos)
   usuario: UsuarioEntity;

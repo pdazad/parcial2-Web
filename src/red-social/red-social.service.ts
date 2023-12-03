@@ -28,9 +28,9 @@ export class redSocialService {
    }
   
    async create(redSocial: redSocialEntity): Promise<redSocialEntity> {
-    // Validar que el nombre no esté vacío
-    if (!redSocial.slogan && redSocial.slogan.length > 20) {
-        throw new BusinessLogicException("The slogan of the redSocial cannot be empty and must be more than 20 characters", BusinessError.VALIDATION_ERROR);
+     // Validar que el nombre no esté vacío y que tenga al menos 20 caracteres
+    if (!redSocial.slogan || redSocial.slogan.length < 20) {
+      throw new BusinessLogicException("The slogan of the redSocial cannot be empty and must have at least 20 characters", BusinessError.VALIDATION_ERROR);
     }
 
     // Continuar con la creación del álbum si pasa la validación

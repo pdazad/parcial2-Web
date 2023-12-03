@@ -38,6 +38,12 @@ export class FotoService {
         throw new BusinessLogicException("The foto's apertura must be between 2.8 and 22", BusinessError.BAD_REQUEST);
     }
 
+    // Validar que como máximo 2 valores estén por encima del valor medio de sus cotas
+    const valuesAboveMedian = [foto.iso, foto.velObturacion, foto.apertura].filter(value => value > (value >= 2 ? 2 : 0) + (value <= 6400 ? 6400 : 0) / 2).length;
+    if (valuesAboveMedian > 2) {
+        throw new BusinessLogicException("Maximum of 2 values must be above the median value of their ranges", BusinessError.BAD_REQUEST);
+    }
+
     return await this.fotoRepository.save(foto);
 }
 

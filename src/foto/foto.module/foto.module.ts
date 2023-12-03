@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { FotoService } from '../foto.service';
-import { FotoEntity } from 'src/foto/foto.entity/foto.entity';
-import { AlbumEntity } from 'src/album/album.entity/album.entity';
+import { FotoEntity } from '../foto.entity/foto.entity';
+import { AlbumEntity } from '../../album/album.entity/album.entity';
 import { UsuarioEntity } from 'src/usuario/usuario.entity/usuario.entity';
 
 @Module({

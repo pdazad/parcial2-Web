@@ -5,8 +5,8 @@ import {
   ManyToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-import { FotoEntity } from 'src/foto/foto.entity/foto.entity';
-import { redSocialEntity } from 'src/red-social/red-social.entity/red-social.entity';
+import { FotoEntity } from '../../foto/foto.entity/foto.entity';
+import { redSocialEntity } from '../../red-social/red-social.entity/red-social.entity';
 
 @Entity()
 export class UsuarioEntity {
