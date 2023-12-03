@@ -1,0 +1,228 @@
+{
+	"info": {
+		"_postman_id": "ce5d9bd9-b81a-4907-93b9-23d3b123d9d7",
+		"name": "Fotos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28292780"
+	},
+	"item": [
+		{
+			"name": "FotoDocumentation",
+			"item": [
+				{
+					"name": "Add a Foto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"iso\": 500,\r\n    \"velObturacion\": 30,\r\n    \"apertura\": 8,\r\n    \"fecha\": \"2023-12-01T12:00:00.000Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/fotos",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"fotos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add a Foto",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"titulo\": \"Título del álbum\",\r\n  \"fechaInicio\": \"2023-12-01T00:00:00.000Z\",\r\n  \"fechaFin\": \"2023-12-31T00:00:00.000Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/fotos",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"fotos"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": " {\r\n    \"id\": \"88a9ab90-1276-11ed-861d-0242ac120003\",\r\n    \"iso\": 500,\r\n    \"velObturacion\": 30,\r\n    \"apertura\": 8,\r\n    \"fecha\": \"2023-12-01T12:00:00.000Z\"\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Find Foto By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/fotos/{{foto_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"fotos",
+								"{{foto_id}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Find Foto By ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/fotos/{{foto_id}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"fotos",
+										"{{foto_id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": " {\r\n    \"id\": \"88a9ab90-1276-11ed-861d-0242ac120003\",\r\n    \"iso\": 500,\r\n    \"velObturacion\": 30,\r\n    \"apertura\": 8,\r\n    \"fecha\": \"2023-12-01T12:00:00.000Z\",\r\n    \"album\": {\r\n        \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\r\n        \"titulo\": \"Título del álbum\",\r\n        \"fechaInicio\": \"2023-12-01T00:00:00.000Z\",\r\n        \"fechaFin\": \"2023-12-31T00:00:00.000Z\"\r\n    }\r\n    \"usuario\": {\r\n        \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\r\n        \"nombre\": \"Paula Daza\",\r\n        \"telefono\": \"3015522085\"\r\n    }\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Find All Fotos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/fotos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"fotos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Find All Fotos",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/fotos",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"fotos"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": " [{\r\n    \"id\": \"68a9ab90-1276-11ed-861d-0242ac120004\",\r\n    \"iso\": 500,\r\n    \"velObturacion\": 30,\r\n    \"apertura\": 8,\r\n    \"fecha\": \"2023-12-01T12:00:00.000Z\",\r\n    \"album\": {\r\n        \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\r\n        \"titulo\": \"Título del álbum\",\r\n        \"fechaInicio\": \"2023-12-01T00:00:00.000Z\",\r\n        \"fechaFin\": \"2023-12-31T00:00:00.000Z\"\r\n    }\r\n    \"usuario\": {\r\n        \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\r\n        \"nombre\": \"Paula Daza\",\r\n        \"telefono\": \"3015522085\"\r\n    }\r\n},\r\n\r\n{\r\n    \"id\": \"88a9ab90-1276-11ed-861d-0242ac120003\",\r\n    \"iso\": 500,\r\n    \"velObturacion\": 30,\r\n    \"apertura\": 8,\r\n    \"fecha\": \"2023-12-01T12:00:00.000Z\",\r\n    \"album\": {\r\n        \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\r\n        \"titulo\": \"Título del álbum\",\r\n        \"fechaInicio\": \"2023-12-01T00:00:00.000Z\",\r\n        \"fechaFin\": \"2023-12-31T00:00:00.000Z\"\r\n    }\r\n    \"usuario\": {\r\n        \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\r\n        \"nombre\": \"Paula Daza\",\r\n        \"telefono\": \"3015522085\"\r\n    }\r\n}\r\n\r\n]"
+						}
+					]
+				},
+				{
+					"name": "Delete Foto ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/fotos/{{foto_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"fotos",
+								"{{foto_id}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Album ID",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/fotos/{{foto_id}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"fotos",
+										"{{foto_id}}"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "FotosTests",
+			"item": [
+				{
+					"name": "UpdateFoto",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"iso\": 500,\r\n    \"velObturacion\": 30,\r\n    \"apertura\": 10,\r\n    \"fecha\": \"2023-12-01T12:00:00.000Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/fotos",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"fotos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

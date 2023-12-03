@@ -1,0 +1,205 @@
+{
+	"info": {
+		"_postman_id": "f6d1ff4d-7d1a-4602-8bc4-c95ff1799153",
+		"name": "Usuarios",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28292780"
+	},
+	"item": [
+		{
+			"name": "UsuarioDocumentation",
+			"item": [
+				{
+					"name": "Add a Usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Paula Daza\",\r\n  \"telefono\": \"3015522085\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/usuarios",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add a Usuario",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"titulo\": \"Título del álbum\",\r\n  \"fechaInicio\": \"2023-12-01T00:00:00.000Z\",\r\n  \"fechaFin\": \"2023-12-31T00:00:00.000Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/usuarios",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"usuarios"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n  \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\r\n  \"nombre\": \"Paula Daza\",\r\n  \"telefono\": \"3015522085\"\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Find Usuario By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/usuarios/{{usuario_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"usuarios",
+								"{{usuario_id}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Find Usuario By ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/usuarios/{{usuario_id}}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"usuarios",
+										"{{usuario_id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\r\n  \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\r\n  \"nombre\": \"Paula Daza\",\r\n  \"telefono\": \"3015522085\",\r\n  \"fotos\":[\r\n      {\r\n        \"iso\": 500,\r\n        \"velObturacion\": 30,\r\n        \"apertura\": 8,\r\n        \"fecha\": \"2023-12-01T12:00:00.000Z\"\r\n      }\r\n  ],\r\n  \"redSocial\": {\r\n    \"id\": \"48a9ab90-1276-11ed-861d-0242ac120003\",\r\n    \"nombre\": \"Facebook\",\r\n    \"slogan\": \"Conectando personas magicamente\",\r\n  }\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Find All Usuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/usuarios",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Find All Usuarios",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/usuarios",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"usuarios"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "[{\r\n  \"id\": \"48a9ab90-1276-11ed-861d-0242ac120002\",\r\n  \"nombre\": \"Paula Daza\",\r\n  \"telefono\": \"3015522085\",\r\n  \"fotos\":[\r\n      {\r\n        \"iso\": 500,\r\n        \"velObturacion\": 30,\r\n        \"apertura\": 8,\r\n        \"fecha\": \"2023-12-01T12:00:00.000Z\"\r\n      }\r\n  ],\r\n  \"redSocial\": {\r\n    \"id\": \"48a9ab90-1276-11ed-861d-0242ac120003\",\r\n    \"nombre\": \"Facebook\",\r\n    \"slogan\": \"Conectando personas magicamente\",\r\n  }\r\n},\r\n[{\r\n  \"id\": \"55a9ab90-1276-11ed-861d-0242ac120004\",\r\n  \"nombre\": \"Paula Daza 2\",\r\n  \"telefono\": \"3015522083\",\r\n  \"fotos\":[\r\n      {\r\n        \"iso\": 500,\r\n        \"velObturacion\": 30,\r\n        \"apertura\": 8,\r\n        \"fecha\": \"2023-12-01T12:00:00.000Z\"\r\n      }\r\n  ],\r\n  \"redSocial\": {\r\n    \"id\": \"48a9ab90-1276-11ed-861d-0242ac120003\",\r\n    \"nombre\": \"Facebook\",\r\n    \"slogan\": \"Conectando personas magicamente\",\r\n  }\r\n}\r\n\r\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "UsuariosTests",
+			"item": [
+				{
+					"name": "Update Celular Usuario",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Paula Daza\",\r\n  \"telefono\": \"3025322085\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/usuarios/{{usuario_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"usuarios",
+								"{{usuario_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Usuario",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/usuarios/{{usuario_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"usuarios",
+								"{{usuario_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
